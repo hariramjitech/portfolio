@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Download, Terminal, Server, Cpu, HardDrive, Wifi } from 'lucide-react';
 import cardImg from '../assets/IDCard.png'; 
+import resumePDF from '../assets/Hariramji_Resume.pdf';
+
 export default function ModuleProfile() {
   const [showProfile, setShowProfile] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
@@ -58,7 +60,8 @@ export default function ModuleProfile() {
           
           try {
             const link = document.createElement('a');
-            link.href = '/Hariramji_Resume.pdf';
+            // link.href = '/Hariramji_Resume.pdf';
+            link.href = resumePDF;
             link.download = 'Hariramji_Resume.pdf';
             link.style.display = 'none';
             document.body.appendChild(link);
