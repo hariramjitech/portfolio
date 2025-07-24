@@ -58,18 +58,18 @@ export default function ModuleProfile() {
           hasDownloaded = true;
           clearInterval(progressInterval);
           
-          try {
-            const link = document.createElement('a');
-            // link.href = '/Hariramji_Resume.pdf';
-            link.href = resumePDF;
-            link.download = 'Hariramji_Resume.pdf';
-            link.style.display = 'none';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          } catch (error) {
-            console.log('Resume download initiated');
-          }
+   try {
+  const link = document.createElement('a');
+  link.href = resumePDF; // ✅ Corrected
+  link.download = 'Hariramji_Resume.pdf';
+  link.style.display = 'none';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+} catch (error) {
+  console.log('Resume download initiated');
+}
+
           
           setTimeout(() => {
             setIsDownloading(false);
