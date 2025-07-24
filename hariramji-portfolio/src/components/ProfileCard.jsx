@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Download, Terminal, Server, Cpu, HardDrive, Wifi } from 'lucide-react';
-
+import cardImg from '../assets/IDCard.png'; 
 export default function ModuleProfile() {
   const [showProfile, setShowProfile] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
@@ -58,7 +58,7 @@ export default function ModuleProfile() {
           
           try {
             const link = document.createElement('a');
-            link.href = './src/assets/Hariramji Resume1.pdf';
+            link.href = '/Hariramji_Resume.pdf';
             link.download = 'Hariramji_Resume.pdf';
             link.style.display = 'none';
             document.body.appendChild(link);
@@ -263,7 +263,8 @@ export default function ModuleProfile() {
                   <div className="relative">
                     <div className="w-full aspect-[3/4] bg-gray-800 rounded border border-green-400/20 overflow-hidden">
                       <img 
-                        src="./src/assets/IDCard.png"
+                        // src="./src/assets/IDCard.png"
+                        src={cardImg} 
                         alt="Hariramji Profile"
                         className="w-full h-full object-cover"
                         onError={(e) => {
